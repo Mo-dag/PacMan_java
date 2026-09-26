@@ -1,9 +1,16 @@
 //Idean här att skapa en klass som ärver JPanel klass
 //Denna klass är en version av JPanel fast vi kan addera mer egenskaper
 
+//PacMan-klassen = spelmotorn/spelområdet
+//        ├── karta
+//        ├── väggar hashset
+//        ├── mat    hashset
+//        ├── spöken hashset
+//        └── Pac-Man
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.HashSet;
 
 /*
    javax.swing
@@ -34,34 +41,13 @@ public class PacMan extends JPanel {
     private Image pacmanRightImage;
     private Image pacmanLeftImage;
 
-
+    // Vi kommer att skapa hash set för att kolla vad PacMan träffar i reeltid.
 
     PacMan(){
         setPreferredSize(new Dimension(boardWidth,boardHeight));
         setBackground(Color.BLACK);
-        //(x, y) = var ritningen börjar
-        //width  = hur långt åt höger
-        //height = hur långt ned
-        
-        //klass = mall/struktur
 
-        //GameObject
-        //├── x
-        //├── y
-        //├── width
-        //├── height
-        //└── image
-        // När vi skapar en klass är det ungefär som att skapa en struct. 
-        // Nästa steg är att skapa många obj från den. Vi slipper seperera variabler för varje obj.
 
-        class block{
-         int x;
-         int y;
-         int width;
-         int height;
-         Image image;
-        }
-     
         //Ladda Images :
         wallImage = new ImageIcon(getClass().getResource("./wall.png")).getImage();
         blueGhostImage = new ImageIcon(getClass().getResource("./blueGhost.png")).getImage();
@@ -76,6 +62,49 @@ public class PacMan extends JPanel {
 
         String[][] tileMap = new String[row][column];
     }
+    //(x, y) = var ritningen börjar
+    //width  = hur långt åt höger
+    //height = hur långt ned
+
+    //(x, y) = var ritningen börjar
+    //width  = hur långt åt höger
+    //height = hur långt ned
+
+    //klass = mall/struktur
+
+    //GameObject
+    //├── x
+    //├── y
+    //├── width
+    //├── height
+    //└── image
+    // När vi skapar en klass är det ungefär som att skapa en struct.
+    // Nästa steg är att skapa många obj från den. Vi slipper seperera variabler för varje obj.
+    class block {
+        int x;
+        int y;
+        int width;
+        int height;
+        Image image;
+        // När spelet igång, x,y kommer att ändras. Därför skulle vi spara de start punkter.
+        int startX;
+        int startY;
+
+        block(Image image, int x, int y, int width, int height) {
+            this.image = image;
+            this.height = height;
+            this.width = width;
+            this.x = x;
+            this.y = y;
+            // När någon skapar ett objekt med konstruktorn och skickar in värden,
+            // sparas de värdena i objektets instansvariabler.
+            // Objektet får de variabler som klassen definierar.
+        }
+    }
+    HashSet <block> walls;
+    HashSet<block> food;
+    HashSet<block> ghosts;
+    block pacman;
 
 
 }
