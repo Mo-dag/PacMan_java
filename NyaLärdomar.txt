@@ -1,5 +1,7 @@
 Inherit
 //inherit : är att skapa en klass som är en version av en annan klass(ha samma metoder & egenskaper) och kan lägga till mer egenskaper.
+// public class nyKlassSomÄrver extends målKlass{}
+
 
 JFrame vs JPanel
 //JFrame är själva fönstret
