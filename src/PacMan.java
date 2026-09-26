@@ -34,7 +34,10 @@ public class PacMan extends JPanel {
     private Image pacmanRightImage;
     private Image pacmanLeftImage;
 
-
+   //PacMan-objekt
+   //├── images
+   //├── row / column
+   //└── tileMap  ← finns kvar och kan användas av andra metoder
 
     PacMan(){
         setPreferredSize(new Dimension(boardWidth,boardHeight));
