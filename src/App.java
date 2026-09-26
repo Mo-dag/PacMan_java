@@ -59,6 +59,7 @@ public class PacMan extends JPanel {
          int y;
          int width;
          int height;
+         Image image;
         }
      
         //Ladda Images :
