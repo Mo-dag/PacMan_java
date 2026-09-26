@@ -13,3 +13,14 @@ JFrame
 │   │ spel här │   │
 │   └──────────┘   │
 └──────────────────┘
+
+PacMan konstruktor: 
+
+Vi skapar PacMan konstruktor in i den kommer vi sätta in egenskaper av spel miljö.
+Senare skapar vi obj av denna konstruktör i JFrame. Den kommer automatisk köra de lines of kod som 
+finns i konsturuktorn.
+
+Hashset : används när man bryr sig om unika saker. Den passar : 
+-Unika användarNamn
+-Unika ID:n
+-Ta bort dubletter.
