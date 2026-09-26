@@ -1,0 +1,13 @@
+Inherit
+//inherit : är att skapa en klass som är en version av en annan klass(ha samma metoder & egenskaper) och kan lägga till mer egenskaper.
+
+JFrame vs JPanel
+//JFrame är själva fönstret
+//JPanel är en yta inne i fönstret där kan man lägga komponenter
+JFrame
+┌──────────────────┐
+│   JPanel         │
+│   ┌──────────┐   │
+│   │ spel här │   │
+│   └──────────┘   │
+└──────────────────┘
