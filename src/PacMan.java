@@ -1,9 +1,16 @@
 //Idean här att skapa en klass som ärver JPanel klass
 //Denna klass är en version av JPanel fast vi kan addera mer egenskaper
 
+//PacMan-klassen = spelmotorn/spelområdet
+//        ├── karta
+//        ├── väggar hashset
+//        ├── mat    hashset
+//        ├── spöken hashset
+//        └── Pac-Man
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.HashSet;
 
 /*
    javax.swing
@@ -34,14 +41,12 @@ public class PacMan extends JPanel {
     private Image pacmanRightImage;
     private Image pacmanLeftImage;
 
-   //PacMan-objekt
-   //├── images
-   //├── row / column
-   //└── tileMap  ← finns kvar och kan användas av andra metoder
+    // Vi kommer att skapa hash set för att kolla vad PacMan träffar i reeltid.
 
     PacMan(){
         setPreferredSize(new Dimension(boardWidth,boardHeight));
         setBackground(Color.BLACK);
+
 
         //Ladda Images :
         wallImage = new ImageIcon(getClass().getResource("./wall.png")).getImage();
@@ -57,6 +62,77 @@ public class PacMan extends JPanel {
 
         String[][] tileMap = new String[row][column];
     }
+    //(x, y) = var ritningen börjar
+    //width  = hur långt åt höger
+    //height = hur långt ned
 
+    //(x, y) = var ritningen börjar
+    //width  = hur långt åt höger
+    //height = hur långt ned
+
+    //klass = mall/struktur
+
+    //GameObject
+    //├── x
+    //├── y
+    //├── width
+    //├── height
+    //└── image
+    // När vi skapar en klass är det ungefär som att skapa en struct.
+    // Nästa steg är att skapa många obj från den. Vi slipper seperera variabler för varje obj.
+    class block {
+        int x;
+        int y;
+        int width;
+        int height;
+        Image image;
+        // När spelet igång, x,y kommer att ändras. Därför skulle vi spara de start punkter.
+        int startX;
+        int startY;
+
+        block(Image image, int x, int y, int width, int height) {
+            this.image = image;
+            this.height = height;
+            this.width = width;
+            this.x = x;
+            this.y = y;
+            // När någon skapar ett objekt med konstruktorn och skickar in värden,
+            // sparas de värdena i objektets instansvariabler.
+            // Objektet får de variabler som klassen definierar.
+        }
+    }
+    HashSet <block> walls;
+    HashSet<block> food;
+    HashSet<block> ghosts;
+    block pacman;
+    //HashSet : samling
+    //block   : vilken typ objekt skulle den innehålla
+    //walls   : namnet på samlingen
+    String [] tileMap = {
+        "XXXXXXXXXXXXXXXXXXX",
+        "X        X        X",
+        "X XX XXX X XXX XX X",
+        "X                 X",
+        "X XX X XXXXX X XX X",
+        "X    X       X    X",
+        "XXXX XXXX XXXX XXXX",
+        "OOOX X       X XOOO",
+        "XXXX X XXrXX X XXXX",
+        "O       bpo       O",
+        "XXXX X XXXXX X XXXX",
+        "OOOX X       X XOOO",
+        "XXXX X XXXXX X XXXX",
+        "X        X        X",
+        "X XX XXX X XXX XX X",
+        "X  X     P     X  X",
+        "XX X X XXXXX X X XX",
+        "X    X   X   X    X",
+        "X XXXXXX X XXXXXX X",
+        "X                 X",
+        "XXXXXXXXXXXXXXXXXXX" 
+    };
+   //Vi kommer att hantera element : Y»» vilken rad , X»» vilken kolumn
+   //DvS : tilaMap[y].charAt(x);
+   
 
 }
