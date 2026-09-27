@@ -105,6 +105,34 @@ public class PacMan extends JPanel {
     HashSet<block> food;
     HashSet<block> ghosts;
     block pacman;
-
+    //HashSet : samling
+    //block   : vilken typ objekt skulle den innehålla
+    //walls   : namnet på samlingen
+    String [] tileMap = {
+        "XXXXXXXXXXXXXXXXXXX",
+        "X        X        X",
+        "X XX XXX X XXX XX X",
+        "X                 X",
+        "X XX X XXXXX X XX X",
+        "X    X       X    X",
+        "XXXX XXXX XXXX XXXX",
+        "OOOX X       X XOOO",
+        "XXXX X XXrXX X XXXX",
+        "O       bpo       O",
+        "XXXX X XXXXX X XXXX",
+        "OOOX X       X XOOO",
+        "XXXX X XXXXX X XXXX",
+        "X        X        X",
+        "X XX XXX X XXX XX X",
+        "X  X     P     X  X",
+        "XX X X XXXXX X X XX",
+        "X    X   X   X    X",
+        "X XXXXXX X XXXXXX X",
+        "X                 X",
+        "XXXXXXXXXXXXXXXXXXX" 
+    };
+   //Vi kommer att hantera element : Y»» vilken rad , X»» vilken kolumn
+   //DvS : tilaMap[y].charAt(x);
+   
 
 }
